@@ -96,6 +96,7 @@ gU to uppercase
 :set hlsearch - highlight search
 :set nohlsearch
 :set list - show tabs and line ends
+:set [no]wildmenu show variants above command line
 ```
 ### windows
 ```
