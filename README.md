@@ -36,6 +36,8 @@ CTRL-G display your location in file
 G go to end of file
 number G go to line number
 gg go to first line
+CTRL-u, CTRL-d page up/page down
+CTRL-y, CTRL-e move up/down wo cursor movement
 ```
 motions
 * `w` word
