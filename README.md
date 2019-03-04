@@ -101,5 +101,7 @@ CTRL-W hjkl move between windows
 ```
 # links
 * $ vimtutor
-* (https://habr.com/ru/post/442110/)
-* (https://eax.me/vim-commands/)
+* https://habr.com/ru/post/442110/
+* https://eax.me/vim-commands/
+* http://blog.erlware.org/how-to-use-vim-for-erlang-development/
+* https://www.books.ru/books/izuchaem-redaktory-vi-i-vim-7-e-izdanie-827256/
