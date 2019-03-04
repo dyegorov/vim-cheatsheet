@@ -1,6 +1,8 @@
 # vim-cheatsheet
 ### save and quit
 ```
+:e edit file (also creates file)
+:e scp/ftp/ftps://user@host/path/to/file network edit
 :w save file
 :w FILENAME save current file to FILENAME
 :wa save all files
@@ -16,6 +18,7 @@ a/A append mode / to line end
 o/O add line after/before current
 r/R replace char / enter replace mode
 u, :u[ndo] undo latest changes
+CTRL-r, :red[o] redo change
 x delete char
 dw delete word
 d7w delete 7 words!
@@ -110,6 +113,29 @@ cd ~/.vim/bundle
 git clone path/to/plugin/repo
 set runtimepath^=~/.vim/bundle/tslime.vim //add this to .vimrc
 :helptags ~/.vim/bundle/nerdtree/doc/ //add docs to help
+```
+### file manager
+```
+:Ex
+:e ./
+```
+when using nerdtree use ctrl-n to toggle filetree
+### buffers
+```
+:ls,:buffers list buffers
+:buffer N go to buffer N
+:bn, bnext next buffer
+:bp, bprevious prefious buffer
+```
+### tabs
+```
+:tabnew [name] create tab
+:tabs list tabs
+:tabn, gt next tab
+:tabp, Gt prev tab
+Ngt go to tab N
+:tabm -1/+1/N move tab back/forward/to position N
+
 ```
 # links
 * $ vimtutor
