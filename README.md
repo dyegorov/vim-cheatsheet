@@ -95,6 +95,7 @@ gU to uppercase
 :set nois
 :set hlsearch - highlight search
 :set nohlsearch
+:set list - show tabs and line ends
 ```
 ### windows
 ```
@@ -136,6 +137,11 @@ when using nerdtree use ctrl-n to toggle filetree
 Ngt go to tab N
 :tabm -1/+1/N move tab back/forward/to position N
 
+```
+### commands
+```
+q: command history
+. replay last command
 ```
 # links
 * $ vimtutor
