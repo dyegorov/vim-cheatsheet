@@ -74,7 +74,7 @@ p paste text
 :r !dir insert command output
 ```
 ### set option
-``
+```
 :set number - show line number
 :set nonumber
 :syntax on
@@ -101,5 +101,5 @@ CTRL-W hjkl move between windows
 ```
 # links
 * $ vimtutor
-* [https://habr.com/ru/post/442110/]
-* [https://eax.me/vim-commands/]
+* (https://habr.com/ru/post/442110/)
+* (https://eax.me/vim-commands/)
