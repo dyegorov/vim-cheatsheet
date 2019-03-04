@@ -68,6 +68,10 @@ move to select text
 y copy (yank) text
 p paste text
 :w NEWFILE save selection to new file
+SHIFT-v select line
+CTRL-v select rectangle
+gu to lowercase
+gU to uppercase
 ```
 ### read from file
 ```
@@ -99,6 +103,13 @@ CTRL-W +- change height
 CTRL-W <> change width 
 CTRL-W = equal width 
 CTRL-W hjkl move between windows 
+```
+### plugins wo vundle
+```
+cd ~/.vim/bundle
+git clone path/to/plugin/repo
+set runtimepath^=~/.vim/bundle/tslime.vim //add this to .vimrc
+:helptags ~/.vim/bundle/nerdtree/doc/ //add docs to help
 ```
 # links
 * $ vimtutor
