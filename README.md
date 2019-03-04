@@ -28,10 +28,43 @@ p paste
 7w/7e move 7 words forward
 0 move to line start
 ce/c$ change to end of word/line
+% move to pairing bracket
+CTRL-G display your location in file
+G go to end of file
+number G go to line number
+gg go to first line
 ```
 motions
 * `w` word
 * `$` end of line
+### run terminal command
+```
+:!
+```
+### search
+```
+/phrase search forward
+?phrase search backward
+n next occurence
+N previous occurence
+CTRL-o, CTRL-i to older/newer positions
+```
+### substitution
+```
+:s/old/new change 1st occurence
+:3,7s/old/new/g change in lines from 3 to 7
+:s/old/new/g everywhere
+:s/old/new/gc with prompt 
+```
+### line numbers/syntax highlight/word wrap
+```
+:set number
+:set nonumber
+:syntax on
+:syntax off
+:set wrap
+:set nowrap
+```
 
 # links
 * $ vimtutor
