@@ -3,6 +3,7 @@
 ### save and quit
 ```
 :w save file
+:w FILENAME save current file to FILENAME
 :wa save all files
 :q quit
 :q! discard and quit
@@ -23,6 +24,7 @@ dd delete line (cuts to buffer)
 7dd delete 7 lines
 d$ delete to end of line
 dw/de delete word
+y copy selected text (###text selection)
 yy copy string
 p paste
 7w/7e move 7 words forward
@@ -55,6 +57,19 @@ CTRL-o, CTRL-i to older/newer positions
 :3,7s/old/new/g change in lines from 3 to 7
 :s/old/new/g everywhere
 :s/old/new/gc with prompt 
+```
+### text selection
+```
+v enter visual mode
+move to select text
+y copy (yank) text
+p paste text
+:w NEWFILE save selection to new file
+```
+###
+```
+:r FILENAME insert contents of file
+:r !dir insert command output
 ```
 ### line numbers/syntax highlight/word wrap
 ```
