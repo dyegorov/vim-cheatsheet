@@ -1,5 +1,4 @@
 # vim-cheatsheet
-# basics
 ### save and quit
 ```
 :w save file
