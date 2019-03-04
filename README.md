@@ -29,6 +29,8 @@ yy copy string
 p paste
 7w/7e move 7 words forward
 0 move to line start
+$ move to line end (j$ move to end of next line)
+e move to end of word
 ce/c$ change to end of word/line
 % move to pairing bracket
 CTRL-G display your location in file
@@ -66,21 +68,37 @@ y copy (yank) text
 p paste text
 :w NEWFILE save selection to new file
 ```
-###
+### read from file
 ```
 :r FILENAME insert contents of file
 :r !dir insert command output
 ```
-### line numbers/syntax highlight/word wrap
-```
-:set number
+### set option
+``
+:set number - show line number
 :set nonumber
 :syntax on
 :syntax off
 :set wrap
 :set nowrap
+:set ic - ignore case
+:set noic
+:set is - show partial matches
+:set nois
+:set hlsearch - highlight search
+:set nohlsearch
 ```
-
+### windows
+```
+CTRL-W CTRL-W switch windows
+:split horizontal split
+:vsplit vertical split
+CTRL-W c close window
+CTRL-W +- change height
+CTRL-W <> change width 
+CTRL-W = equal width 
+CTRL-W hjkl move between windows 
+```
 # links
 * $ vimtutor
 * [https://habr.com/ru/post/442110/]
