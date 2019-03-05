@@ -168,6 +168,16 @@ Sql Execute
 \stw - prompts for where clause
 \sta - prompts for table name and selects from it
 ```
+### schema info
+```
+:DBListTable
+:DBListProcedure
+:DBListView
+```
+map them in vimrc
+```
+map <leader>l :DBListTable<CR>
+```
 ### desc table under cursor
 ```
 \sdt - desc table
