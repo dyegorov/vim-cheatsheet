@@ -105,8 +105,8 @@ gU to uppercase
 ### windows
 ```
 CTRL-W CTRL-W switch windows
-:split horizontal split
-:vsplit vertical split
+:sp[lit] horizontal split
+:vs[plit] vertical split
 CTRL-W c close window
 CTRL-W +- change height
 CTRL-W <> change width 
@@ -134,6 +134,7 @@ when using nerdtree use ctrl-n to toggle filetree
 :buffer N go to buffer N
 :bn, bnext next buffer
 :bp, bprevious prefious buffer
+:vs[plit] | buffer N - split and open buffer N
 ```
 ### tabs
 ```
@@ -157,6 +158,10 @@ q: command history
 ```
 let g:dbext_default_profile_demo = 'type=MYSQL:host=192.168.89.42:user=root:passwd=root:dbname=sndbr_17_3'
 let g:dbext_default_profile = 'demo'
+```
+### execute ALL
+```
+\sea
 ```
 ### execute sql under cursor
 ```
