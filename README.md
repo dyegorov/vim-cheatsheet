@@ -112,6 +112,8 @@ CTRL-W +- change height
 CTRL-W <> change width 
 CTRL-W = equal width 
 CTRL-W hjkl move between windows 
+CTRL-W o maximize current window
+CTRL-w ^ close max window
 ```
 ### plugins wo vundle
 ```
@@ -197,3 +199,4 @@ q - close
 * https://www.books.ru/books/izuchaem-redaktory-vi-i-vim-7-e-izdanie-827256/
 * https://mutelight.org/dbext-the-last-sql-client-youll-ever-need
 * https://github.com/vim-scripts/dbext.vim
+ 
