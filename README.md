@@ -148,6 +148,37 @@ Ngt go to tab N
 q: command history
 . replay last command
 ```
+## dbext
+* leader = \
+* CTRL-w = to make windows equal
+### vimrc
+```
+let g:dbext_default_profile_demo = 'type=MYSQL:host=192.168.89.42:user=root:passwd=root:dbname=sndbr_17_3'
+let g:dbext_default_profile = 'demo'
+```
+### execute sql under cursor
+```
+\se
+Sql Execute
+```
+### select * from table under cursor
+```
+\st - selects all rows
+\sT - prompts row limit
+\stw - prompts for where clause
+\sta - prompts for table name and selects from it
+```
+### desc table under cursor
+```
+\sdt - desc table
+\sdp - desc procedure
+\slc - copies all table column names to unnamed register (col1, col2)
+```
+### results buffer commands
+```
+R - rerun current sql
+q - close
+```
 # links
 * $ vimtutor
 * https://habr.com/ru/post/442110/
