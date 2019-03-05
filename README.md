@@ -195,3 +195,5 @@ q - close
 * https://eax.me/vim-commands/
 * http://blog.erlware.org/how-to-use-vim-for-erlang-development/
 * https://www.books.ru/books/izuchaem-redaktory-vi-i-vim-7-e-izdanie-827256/
+* https://mutelight.org/dbext-the-last-sql-client-youll-ever-need
+* https://github.com/vim-scripts/dbext.vim
