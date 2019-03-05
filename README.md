@@ -13,6 +13,8 @@
 ### moving and editing
 ```
 hjkl move cursor
+{,} go to start/end of paragraph/code block
+CTRL-f,CTRL-b forward/backward one screen
 i/I insert mode / insert at line start
 a/A append mode / to line end
 o/O add line after/before current
@@ -43,7 +45,7 @@ CTRL-u, CTRL-d page up/page down
 CTRL-y, CTRL-e move up/down wo cursor movement
 ```
 motions
-* `w` word
+* `w,b,e` word
 * `$` end of line
 ### run terminal command
 ```
@@ -56,6 +58,8 @@ motions
 n next occurence
 N previous occurence
 CTRL-o, CTRL-i to older/newer positions
+*,# find word under cursor down/up
+:noh disable highlight after search
 ```
 ### substitution
 ```
