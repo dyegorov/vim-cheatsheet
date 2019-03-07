@@ -196,6 +196,13 @@ map <leader>l :DBListTable<CR>
 R - rerun current sql
 q - close
 ```
+### registers
+`"` start working with register
+```
+"ay - yank to register a
+"+y - yank to register +
+:reg a b c - view registries a b c
+```
 # links
 * $ vimtutor
 * https://habr.com/ru/post/442110/
@@ -204,4 +211,4 @@ q - close
 * https://www.books.ru/books/izuchaem-redaktory-vi-i-vim-7-e-izdanie-827256/
 * https://mutelight.org/dbext-the-last-sql-client-youll-ever-need
 * https://github.com/vim-scripts/dbext.vim
- 
+
