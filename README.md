@@ -203,6 +203,7 @@ q - close
 "+y - yank to register +
 :reg a b c - view registries a b c
 ```
+vim has a unnamed (or default) register that can be accessed with "". Any text that you delete (with d, c, s or x) or yank (with y) will be placed there, and that’s what vim uses to paste, when no explicit register is given. A simple p is the same thing as doing ""p.
 # links
 * $ vimtutor
 * https://habr.com/ru/post/442110/
