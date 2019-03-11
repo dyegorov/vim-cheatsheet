@@ -72,7 +72,7 @@ CTRL-o, CTRL-i to older/newer positions
 ```
 v enter visual mode
 move to select text
-y copy (yank) text
+y copy/yank text
 p paste text
 :w NEWFILE save selection to new file
 SHIFT-v select line
@@ -80,7 +80,11 @@ CTRL-v select rectangle
 gu to lowercase
 gU to uppercase
 ```
-to sel
+to select paragraph:
+* `{` go to par start
+* `v` enter visual mode
+* `}` go to par end
+* `y` to copy `d` to paste
 ### read from file
 ```
 :r FILENAME insert contents of file
