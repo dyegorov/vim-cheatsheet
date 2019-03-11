@@ -151,6 +151,9 @@ Ngt go to tab N
 :tabm -1/+1/N move tab back/forward/to position N
 
 ```
+Setup tabs:
+* add `set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab` to `.vimrc`
+* https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces
 ### commands
 ```
 q: command history
