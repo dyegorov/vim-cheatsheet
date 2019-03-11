@@ -58,7 +58,7 @@ motions
 n next occurence
 N previous occurence
 CTRL-o, CTRL-i to older/newer positions
-*,# find word under cursor down/up
+`*,#` find word under cursor down/up 
 :noh disable highlight after search
 ```
 ### substitution
@@ -80,6 +80,7 @@ CTRL-v select rectangle
 gu to lowercase
 gU to uppercase
 ```
+to sel
 ### read from file
 ```
 :r FILENAME insert contents of file
