@@ -236,6 +236,15 @@ inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 ```
+### snippets wo plugin
+save lines to files
+```
+:100,200w filename
+```
+paste file contents below
+```
+:r filename
+```
 # links
 * $ vimtutor
 * https://habr.com/ru/post/442110/
