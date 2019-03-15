@@ -29,6 +29,21 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'vim-scripts/dbext.vim'
+Plugin 'shmup/vim-sql-syntax'
+Plugin 'vim-erlang/vim-erlang-omnicomplete'
+Plugin 'vim-erlang/vim-erlang-compiler'
+" React {
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
+Plugin 'w0rp/ale'
+Plugin 'skywind3000/asyncrun.vim'
+" }
+" Snippets {
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+" }
+Plugin 'Chiel92/vim-autoformat'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -149,10 +164,35 @@ syntax on
 map <C-n> :NERDTreeToggle<CR>
 set runtimepath^=~/.vim/bundle/paredit.vim
 set runtimepath^=~/.vim/bundle/tslime.vim
-"let g:codedark_conservative = 1
-"let g:airline_theme = 'codedark'
-"set t_Co=256
-"set t_ut=
-"colorscheme codedark
+let g:codedark_conservative = 1
+let g:airline_theme = 'codedark'
+set t_Co=256
+set t_ut=
+set background=dark
+colorscheme codedark
 "colorscheme dark_plus
-colorscheme solarized8_dark_low
+"colorscheme solarized8_dark_low
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+set runtimepath^=~/.vim/bundle/vim-erlang-compiler
+set runtimepath^=~/.vim/bundle/vim-erlang-omnicomplete
+" React {
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+" }
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["ultisnippets"]
+noremap <F3> :Autoformat<CR>
