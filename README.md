@@ -58,7 +58,7 @@ motions
 n next occurence
 N previous occurence
 CTRL-o, CTRL-i to older/newer positions
-`*,#` find word under cursor down/up 
+`*,#` find word under cursor down/up
 :noh disable highlight after search
 ```
 ### substitution
@@ -66,7 +66,7 @@ CTRL-o, CTRL-i to older/newer positions
 :s/old/new change 1st occurence
 :3,7s/old/new/g change in lines from 3 to 7
 :s/old/new/g everywhere
-:s/old/new/gc with prompt 
+:s/old/new/gc with prompt
 ```
 ### text selection
 ```
@@ -114,9 +114,9 @@ CTRL-W CTRL-W switch windows
 :vs[plit] vertical split
 CTRL-W c close window
 CTRL-W +- change height
-CTRL-W <> change width 
-CTRL-W = equal width 
-CTRL-W hjkl move between windows 
+CTRL-W <> change width
+CTRL-W = equal width
+CTRL-W hjkl move between windows
 CTRL-W o maximize current window
 CTRL-w ^ close max window
 ```
@@ -138,8 +138,7 @@ when using nerdtree use ctrl-n to toggle filetree
 :ls,:buffers list buffers
 :buffer N go to buffer N
 :bn, bnext next buffer
-:bp, bprevious prefious buffer
-:vs[plit] | buffer N - split and open buffer N
+
 ```
 ### tabs
 ```
@@ -161,7 +160,7 @@ q: command history
 ```
 ## dbext
 * leader = \
-* CTRL-w = to make windows equal
+* `CTRL-w =` to make windows equal
 ### vimrc
 ```
 let g:dbext_default_profile_demo = 'type=MYSQL:host=192.168.89.42:user=root:passwd=root:dbname=sndbr_17_3'
@@ -224,6 +223,18 @@ vim has a unnamed (or default) register that can be accessed with "". Any text t
 :xmap - Display visual mode maps
 :cmap - Display command-line mode maps
 :omap - Display operator pending mode maps
+```
+### auto close brackets
+* https://stackoverflow.com/questions/21316727/automatic-closing-brackets-for-vim
+* add to vimrc:
+```
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 ```
 # links
 * $ vimtutor
