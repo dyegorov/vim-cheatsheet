@@ -245,6 +245,14 @@ paste file contents below
 ```
 :r filename
 ```
+### markers
+```
+ma set LOCAL marker `a`
+mB set GLOBAL marker `B`
+\`c go to marker c
+\`0 go to position before vim close 
+:marks list markers
+```
 # links
 * $ vimtutor
 * https://habr.com/ru/post/442110/
