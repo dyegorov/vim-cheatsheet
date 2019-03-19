@@ -249,8 +249,8 @@ paste file contents below
 ```
 ma set LOCAL marker `a`
 mB set GLOBAL marker `B`
-\`c go to marker c
-\`0 go to position before vim close 
+\`c go to marker c (ignore backslash)
+\`0 go to position before vim close (ignore backslash)
 :marks list markers
 ```
 # links
