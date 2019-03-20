@@ -73,6 +73,7 @@ CTRL-o, CTRL-i to older/newer positions
 v enter visual mode
 move to select text
 y copy/yank text
+viw selects word under cursor
 p paste text
 :w NEWFILE save selection to new file
 SHIFT-v select line
@@ -252,6 +253,10 @@ mB set GLOBAL marker `B`
 \`c go to marker c (ignore backslash)
 \`0 go to position before vim close (ignore backslash)
 :marks list markers
+```
+### visually change cursor in input mode
+```
+:autocmd InsertEnter,InsertLeave * set cul!
 ```
 # links
 * $ vimtutor
