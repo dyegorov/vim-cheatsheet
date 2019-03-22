@@ -259,6 +259,12 @@ mB set GLOBAL marker `B`
 :autocmd InsertEnter,InsertLeave * set cul!
 ```
 ### view full path of current file `1,ctrl-g`
+### disable swap files
+```
+set noundofile
+set nobackup
+set noswapfile
+```
 # links
 * $ vimtutor
 * https://habr.com/ru/post/442110/
