@@ -15,6 +15,7 @@
 hjkl move cursor
 {,} go to start/end of paragraph/code block
 CTRL-f,CTRL-b forward/backward one screen
+f<char> jumps to char occurence in string
 i/I insert mode / insert at line start
 a/A append mode / to line end
 o/O add line after/before current
