@@ -275,3 +275,17 @@ set noswapfile
 * https://mutelight.org/dbext-the-last-sql-client-youll-ever-need
 * https://github.com/vim-scripts/dbext.vim
 
+# PS tmux cheatsheet
+always run tmux -2 for vim colors
+
+`$ tmux ls` view running sessions
+
+
+### restore session after restart
+https://github.com/tmux-plugins/tpm#installation
+```
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+set -g @continuum-restore 'on'
+```
