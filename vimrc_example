@@ -45,6 +45,9 @@ Plugin 'honza/vim-snippets'
 " }
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'luochen1990/rainbow'
+Plugin 'cohama/lexima.vim'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'nathanaelkane/vim-indent-guides'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -185,7 +188,7 @@ let g:user_emmet_settings = {
   \}
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+"let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 " }
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
@@ -198,4 +201,33 @@ let g:UltiSnipsExpandTrigger="<F4>"
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["ultisnippets"]
 noremap <F3> :Autoformat<CR>
-let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
+let g:rainbow_conf = {
+  \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+  \ 'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+  \ 'operators': '_,_',
+  \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+  \ 'separately': {
+  \   '*': {},
+  \   'tex': {
+  \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+  \   },
+  \   'lisp': {
+  \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+  \   },
+  \   'vim': {
+  \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+  \   },
+  \   'html': {
+  \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+  \   },
+  \   'css': 0,
+  \ }
+  \}
+let g:better_whitespace_enabled=1
+let g:strip_whitespace_on_save=1
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd InsertEnter,InsertLeave * set cul!
+set noundofile
+set nobackup
+set noswapfile
