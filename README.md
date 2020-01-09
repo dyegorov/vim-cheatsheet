@@ -1,4 +1,243 @@
 # vim-cheatsheet
+## modes
+- normal: use it whenever not typing
+- insert: insert text. `- INSERT -` indication
+- command: runs command e.g. `:ex` and returns to normal
+- visual: highlight text when moving cursor. `-VISUAL-` indicator
+- insert normal: when in insert mode press `Ctrl-o`. One command in normal mode and back to insert
+
+## working with files
+### Open file with `:e`
+```
+$ vim
+:e /etc/passwd
+```
+### Add file contents to current buffer
+```
+:read file.txt
+:r file.txt // inserts file.txt below cursor in current buffer
+:0r file.txt // insert before first line
+:r!sed -n 2,8p file.txt // insert lines 2-8 from file.txt below cursor
+:r !ls // insert dir listing below cursor
+```
+### Open file or link
+```
+gf // open filename under cursor
+gx // open link in default browser
+```
+### Close file
+```
+:wq // save and quit vim
+:x // exit vim and write if changes made
+ZZ // = :x
+:q! // quit without saving
+:qa // exit all open files in current vim session
+```
+### Save file
+```
+:w // save opened buffer
+:w file.txt // save as file.txt
+:w! file.txt // save as and rewrite
+:sav file.txt // wtf is this
+:up[date] file.txt // save if buffer was modified
+```
+### Navigate words
+```
+hjkl // left down up right
+
+w // go to start of next word
+W // go to start of next WORD
+e // go to end of current word
+E // go to end of current WORD
+b // go to prev (before - b) word
+B // go to prev WORD
+3w // go to start of 3rd word
+6j // go 6 lines below
+```
+Vim "navigation" is not-so difficult!
+`WORD` is delimited by white space
+`word` is delimited by non-keyword characters
+### Scroll pages
+```
+Ctrl-d // scroll down half page
+Ctrl-u // scroll up half page
+Ctrl-f // page down (forwards)
+Ctrl-b // page up (backwards)
+```
+### Jump file
+```
+gg // go to top of file
+G // bottom of file
+{ // beginning of current paragraph
+} // end of current paragraph
+% // matching pair of (), [], {}
+50% // line at 50% of file
+:28 // to line 28
+```
+### Navigate window
+```
+H // first line in current window (High)
+L // lowest line of window
+M // middle of window 
+```
+### Search
+```
+/  // search forward
+n  // next occurence
+N  // prev occurence
+ggn // go to top of file and find next
+GN  // go to end and find last
+?   // search backwards
+```
+### File manager
+```
+:Ex  // Explore current dir
+:Ex <dir>
+:Sex  // explore in horizontal split
+:Vex  // in vertical
+:Tex  // in new tab
+:Lexplore // vertical split on the left
+:40vs +Ex
+let g:netrw_liststyle = 3 // set .vimrc list style
+let g:newrw_browse_split = 4 // open file in previous window
+let g:netrw_winsize = 20 // file manager 20% of vim window
+<Enter> // open file under cursor
+D // delete file
+R // rename
+X // execute
+% // create new
+```
+### Edit file via SSH
+```
+vim scp://user@myserver[:port]//pat/to/file.txt
+vim ftp://hostname/path/to/file
+```
+
+## Personalizing
+```
+:set number
+:set nonumber
+:set number! // toggle numbers on/off
+:echo $HOME  // view vim home dir and find .vimrc
+colorscheme  scheme_name
+set cursorline
+set cursorcolumn
+```
+General options
+```
+set nocompatible - Use Vim settings, rather then Vi settings. It’s important to have this on
+the top of your file, as it influences other options.
+set backspace=indent,eol,start - Allow backspacing over indention, line breaks and insertion
+start.
+set history=1000 - Set bigger history of executed commands.
+set showcmd - Show incomplete commands at the bottom.
+set showmode - Show current mode at the bottom.
+set autoread - Automatically re-read files if unmodified inside Vim.
+set hidden - Manage multiple buffers effectively: the current buffer can be “sent” to the
+background without writing to disk. When a background buffer becomes current again,
+marks and undo-history are remembered. See chapter Buffers to understand this better.
+```
+User interface
+```
+set laststatus=2 - Always display the status bar.
+set ruler - Always show cursor position.
+set wildmenu - Display command line’s tab complete options as a menu.
+set tabpagemax=40 - Maximum number of tab pages that can be opened from the command
+line.
+colorscheme desert - Change color scheme.
+set cursorline - Highlight the line currently under cursor.
+set number - Show line numbers on the sidebar.
+set relativenumber - Show line number on the current line and relative numbers on all other
+lines. Works only if the option above ( number ) is enabled.
+set noerrorbells - Disable beep on errors.
+set visualbell - Flash the screen instead of beeping on errors.
+set mouse=a - Enable mouse for scrolling and resizing.
+set background=dark - Use colors that suit a dark background.
+set title - Set the window’s title, reflecting the file currently being edited.
+```
+Indentation
+```
+set autoindent - New lines inherit the indentation of previous lines.
+filetype plugin indent on - Smart auto indentation (instead of old smartindent option).
+set tabstop=4 - Show existing tab with 4 spaces width.
+set shiftwidth=2 - When indenting with ‘>’, use 2 spaces width.
+set expandtab - On pressing tab, insert 4 spaces.
+set nowrap - Don’t wrap lines.
+```
+Text rendering
+```ignorelang
+set encoding=utf-8 - Use an encoding that supports Unicode.
+set linebreak - Wrap lines at convenient points, avoid wrapping a line in the middle of a
+word.
+set scrolloff=3 - The number of screen lines to keep above and below the cursor.
+set sidescrolloff=5 - The number of screen columns to keep to the left and right of the
+cursor.
+syntax enable - Enable syntax highlighting
+```
+
+### Swap and backup
+Swap files
+```ignorelang
+set noswapfile // disable all
+set nobackup
+set nowb
+// or move
+$ mkdir ~/.vim/swp
+set directory=$HOME/.vim/swp//
+set backupdir=~/.vim/.backup//
+```
+### Enable project speciic vimrc
+ATTENTION. This is dangerous!
+```ignorelang
+set exrc
+```
+
+### Basic vimrc
+```ignorelang
+set nocompatible
+" Use Vim settings, rather than Vi settings
+set softtabstop=2 " Indent by 2 spaces when hitting tab
+set shiftwidth=2 " Indent by 4 spaces when auto-indenting
+set tabstop=2 " Show existing tab with 4 spaces width
+syntax on " Enable syntax highlighting
+filetype indent on " Enable indenting for files
+set autoindent " Enable auto indenting
+set number " Enable line numbers
+colorscheme desert " Set nice looking colorscheme
+set nobackup " Disable backup files
+set laststatus=2 "show status line
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+set wildmenu " Display command line's tab complete options as a menu.
+```
+### Undo and redo
+```ignorelang
+u // in normal mode
+:u[ndo]
+:red[o]
+Ctrl-r // in normal mode
+:5u // undo 5 changes
+:ea[rlier]
+:lat[er]
+:earlier 2 // undo 2 changes
+:earlier 10m // undo last 10 minutes
+:ea 2d
+:ea 3h
+:later 5m
+:lat 15s
+:ea 3f // undo last 3 file writes/saves
+```
+Undo branches
+```ignorelang
+g- // prev branch
+g+ // next branch
+```
+Persistent undo
+```ignorelang
+set undofile
+mkdir ~/.vim/undodir
+set undodir=~/.vim/undodir
+```
+#########################
 ### save and quit
 ```
 :e edit file (also creates file)
