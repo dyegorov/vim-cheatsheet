@@ -118,6 +118,7 @@ vim ftp://hostname/path/to/file
 :set number
 :set nonumber
 :set number! // toggle numbers on/off
+:set number relativenumber // view numbers from current line. use :.+8t. to copy 8th line from current
 :echo $HOME  // view vim home dir and find .vimrc
 colorscheme  scheme_name
 set cursorline
@@ -237,6 +238,19 @@ set undofile
 mkdir ~/.vim/undodir
 set undodir=~/.vim/undodir
 ```
+
+### Buffers
+Buffer is a piece of memory for opened file.
+* Buffer = in-memory text of a file
+* Window = viewport on a buffer
+* Tab = collection of windows
+
+```ignorelang
+:ls // list buffers
+:buffers // also list buffers
+
+```
+
 #########################
 ### save and quit
 ```
