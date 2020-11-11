@@ -248,7 +248,7 @@ Buffer is a piece of memory for opened file.
 ```ignorelang
 :ls // list buffers
 :buffers // also list buffers
-
+:5b // open 5th buffer
 ```
 
 #########################
