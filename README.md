@@ -1,4 +1,5 @@
 # vim-cheatsheet
+
 ## modes
 - normal: use it whenever not typing
 - insert: insert text. `- INSERT -` indication
@@ -7,11 +8,13 @@
 - insert normal: when in insert mode press `Ctrl-o`. One command in normal mode and back to insert
 
 ## working with files
+
 ### Open file with `:e`
 ```
 $ vim
 :e /etc/passwd
 ```
+
 ### Add file contents to current buffer
 ```
 :read file.txt
@@ -20,11 +23,13 @@ $ vim
 :r!sed -n 2,8p file.txt // insert lines 2-8 from file.txt below cursor
 :r !ls // insert dir listing below cursor
 ```
+
 ### Open file or link
 ```
 gf // open filename under cursor
 gx // open link in default browser
 ```
+
 ### Close file
 ```
 :wq // save and quit vim
@@ -33,6 +38,7 @@ ZZ // = :x
 :q! // quit without saving
 :qa // exit all open files in current vim session
 ```
+
 ### Save file
 ```
 :w // save opened buffer
@@ -41,6 +47,7 @@ ZZ // = :x
 :sav file.txt // wtf is this
 :up[date] file.txt // save if buffer was modified
 ```
+
 ### Navigate words
 ```
 hjkl // left down up right
@@ -54,9 +61,11 @@ B // go to prev WORD
 3w // go to start of 3rd word
 6j // go 6 lines below
 ```
+
 Vim "navigation" is not-so difficult!
 `WORD` is delimited by white space
 `word` is delimited by non-keyword characters
+
 ### Scroll pages
 ```
 Ctrl-d // scroll down half page
@@ -64,6 +73,7 @@ Ctrl-u // scroll up half page
 Ctrl-f // page down (forwards)
 Ctrl-b // page up (backwards)
 ```
+
 ### Jump file
 ```
 gg // go to top of file
@@ -74,12 +84,14 @@ G // bottom of file
 50% // line at 50% of file
 :28 // to line 28
 ```
+
 ### Navigate window
 ```
 H // first line in current window (High)
 L // lowest line of window
 M // middle of window 
 ```
+
 ### Search
 ```
 /  // search forward
@@ -89,6 +101,7 @@ ggn // go to top of file and find next
 GN  // go to end and find last
 ?   // search backwards
 ```
+
 ### File manager
 ```
 :Ex  // Explore current dir
@@ -107,6 +120,7 @@ R // rename
 X // execute
 % // create new
 ```
+
 ### Edit file via SSH
 ```
 vim scp://user@myserver[:port]//pat/to/file.txt
@@ -124,6 +138,7 @@ colorscheme  scheme_name
 set cursorline
 set cursorcolumn
 ```
+
 General options
 ```
 set nocompatible - Use Vim settings, rather then Vi settings. It’s important to have this on
@@ -138,6 +153,7 @@ set hidden - Manage multiple buffers effectively: the current buffer can be “s
 background without writing to disk. When a background buffer becomes current again,
 marks and undo-history are remembered. See chapter Buffers to understand this better.
 ```
+
 User interface
 ```
 set laststatus=2 - Always display the status bar.
@@ -156,6 +172,7 @@ set mouse=a - Enable mouse for scrolling and resizing.
 set background=dark - Use colors that suit a dark background.
 set title - Set the window’s title, reflecting the file currently being edited.
 ```
+
 Indentation
 ```
 set autoindent - New lines inherit the indentation of previous lines.
@@ -165,6 +182,7 @@ set shiftwidth=2 - When indenting with ‘>’, use 2 spaces width.
 set expandtab - On pressing tab, insert 4 spaces.
 set nowrap - Don’t wrap lines.
 ```
+
 Text rendering
 ```ignorelang
 set encoding=utf-8 - Use an encoding that supports Unicode.
@@ -187,7 +205,8 @@ $ mkdir ~/.vim/swp
 set directory=$HOME/.vim/swp//
 set backupdir=~/.vim/.backup//
 ```
-### Enable project speciic vimrc
+
+### Enable project specific vimrc
 ATTENTION. This is dangerous!
 ```ignorelang
 set exrc
@@ -210,6 +229,7 @@ set laststatus=2 "show status line
 set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
 set wildmenu " Display command line's tab complete options as a menu.
 ```
+
 ### Undo and redo
 ```ignorelang
 u // in normal mode
@@ -227,11 +247,13 @@ Ctrl-r // in normal mode
 :lat 15s
 :ea 3f // undo last 3 file writes/saves
 ```
+
 Undo branches
 ```ignorelang
 g- // prev branch
 g+ // next branch
 ```
+
 Persistent undo
 ```ignorelang
 set undofile
@@ -249,6 +271,11 @@ Buffer is a piece of memory for opened file.
 :ls // list buffers
 :buffers // also list buffers
 :5b // open 5th buffer
+:buffer 5 // open 5th buffer
+:ball // open all buffers
+:bn[ext] // open next
+:bp[revious] // open previous
+:bd // buffer delete - close current buffer
 ```
 
 #########################
