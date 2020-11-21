@@ -276,6 +276,68 @@ Buffer is a piece of memory for opened file.
 :bn[ext] // open next
 :bp[revious] // open previous
 :bd // buffer delete - close current buffer
+map <C-K> :pbrev<CR>
+map <C-J> :bnext<CR> // ctrl-k go to next buffer, ctrl-j to previous
+Ctrl-6  // switch current and prev buffers
+```
+
+### Windows and Tabs
+Window is a viewport on buffer.
+```ignorelang
+vim -O file1 file2 file3 // opens with vertical split
+vim -o file1 file2 // opens with horizontal split
+vim -o5 // open 5 windows
+```
+
+A window can be split
+```ignorelang
+:sp[lit] file.txt // opens file as horizontal split
+:vs[plit] file.txt // opens file as vertical split
+:20sp file.txt // horizontal split for 20 lines
+:25vs file.txt // vertical for 25 chars
+```
+
+Switching windows
+```ignorelang
+Ctrl-w h // switch window to the left
+Ctrl-w j // switch window below
+Ctrl-w k // switch window above
+Ctrl-w l // switch window to the right
+
+vimrc:
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+```
+
+Moving windows
+```ignorelang
+Ctrl-w r // Rotate vertical windows left->right
+Ctrl-w R // ... right->left
+Ctrl-w H // move curr window left and full height
+Ctrl-w J // move curr window bot and full width
+```
+
+Resizing windows
+```ignorelang
+Ctrl-w = // resize equally
+Ctrl-w > // increase window to right
+Ctrl-w < // increase window to left
+Ctrl-w 10 <
+Ctrl-w - // decrease height
+Ctrl-w 5 - 
+Ctrl-w + // increase height
+Ctrl-w 5 +
+
+:on[ly] // close other splits
+```
+
+Sessions
+```ignorelang
+:mksession ~/mysession.vim // save current windows and tabs
+vim -S ~/mysession.vim // restore session
+:source ~/mysession.vim
 ```
 
 #########################
